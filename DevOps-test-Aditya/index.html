@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My AWS Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 48px;
+            color: #00b4d8;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #00b4d8, #4cc9f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tagline {
+            font-size: 1.3em;
+            color: #a3d5ff;
+            margin-bottom: 30px;
+        }
+        
+        .success-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #4cc9f0, #00b4d8);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(76, 201, 240, 0.4);
+        }
+        
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .tech-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 200px;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .tech-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #4cc9f0;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #00b4d8;
+        }
+        
+        .feature-card h3 {
+            color: #4cc9f0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .aws-info {
+            background: rgba(255, 153, 0, 0.1);
+            border: 1px solid rgba(255, 153, 0, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .url-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            font-family: 'Courier New', monospace;
+            word-break: break-all;
+            border: 2px dashed #4cc9f0;
+        }
+        
+        .url-box a {
+            color: #4cc9f0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .url-box a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 50px 0;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #00b4d8;
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            color: #a3d5ff;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .tech-stack {
+                flex-direction: column;
+                align-items: center;
+            }
+            .tech-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-cloud"></i>
+            </div>
+            <h1>AWS S3 Static Website</h1>
+            <p class="tagline">Hosted with Terraform Infrastructure as Code</p>
+            <div class="success-badge">
+                <i class="fas fa-check-circle"></i> DEPLOYMENT SUCCESSFUL
+            </div>
+        </header>
+        
+        <div class="aws-info">
+            <h2><i class="fab fa-aws"></i> AWS Workshop Achievement</h2>
+            <p>This website is hosted on Amazon S3 with Terraform automation</p>
+            <div class="url-box">
+                <p>Your Website URL:</p>
+                <p><a href="#" id="websiteUrl">Loading...</a></p>
+                <p><small>Click to visit your live website</small></p>
+            </div>
+        </div>
+        
+        <div class="tech-stack">
+            <div class="tech-card">
+                <div class="tech-icon">
+                    <i class="fab fa-aws"></i>
+                </div>
+                <h3>Amazon S3</h3>
+                <p>Static Website Hosting</p>
+            </div>
+            
+            <div class="tech-card">
+                <div class="tech-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Terraform</h3>
+                <p>Infrastructure as Code</p>
+            </div>
+            
+            <div class="tech-card">
+                <div class="tech-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h3>HTML5 & CSS3</h3>
+                <p>Modern Web Design</p>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <h3><i class="fas fa-bolt"></i> High Performance</h3>
+                <p>Amazon S3 delivers low-latency, high-throughput content globally with 99.9% availability.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-shield-alt"></i> Secure & Scalable</h3>
+                <p>Built-in security features and automatic scaling to handle any amount of traffic.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-dollar-sign"></i> Cost Effective</h3>
+                <p>Pay only for what you use with no minimum fees or setup costs.</p>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">99.9%</span>
+                <p>Uptime SLA</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">&lt;100ms</span>
+                <p>First Byte Latency</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">$0.023</span>
+                <p>Cost per GB/month</p>
+            </div>
+        </div>
+        
+        <footer>
+            <h3>AWS Workshop Project</h3>
+            <p>Created with Terraform Infrastructure as Code</p>
+            <p>Deployed on Amazon S3 Static Website Hosting</p>
+            <p style="margin-top: 20px;">
+                <i class="fas fa-globe"></i> Region: ap-south-1 (Mumbai) | 
+                <i class="fas fa-calendar"></i> Deployed: <span id="currentDate"></span>
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // Auto-populate current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
+        // Auto-populate website URL
+        const currentUrl = window.location.hostname;
+        const websiteUrl = `http://${currentUrl}`;
+        document.getElementById('websiteUrl').href = websiteUrl;
+        document.getElementById('websiteUrl').textContent = websiteUrl;
+        
+        // Add animation to success badge
+        const badge = document.querySelector('.success-badge');
+        setInterval(() => {
+            badge.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                badge.style.transform = 'scale(1)';
+            }, 300);
+        }, 3000);
+    </script>
+</body>
+</html>
